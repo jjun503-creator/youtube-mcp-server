@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: youtube-mcp-server
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /ready
+    envVars:
+      - key: YOUTUBE_API_KEY
+        sync: false
+      - key: YOUTUBE_TRANSCRIPT_LANG
+        value: ko
